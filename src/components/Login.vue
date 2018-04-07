@@ -22,10 +22,11 @@
     methods: {
       signIn(){
         firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          function(user){
+          (user)=>{
             alert('Bienvenido Paps!')
+            this.$router.replace('hello')
           },
-          function(err){
+          (err)=>{
             alert('Oops.' + err.message)
           }
         )
